@@ -4,13 +4,34 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "parcel serve ./src/index.html",
+    "build": "rm -rf ./dist; NODE_ENV=production parcel build ./src/index.html"
+  },
+  "browserslist": [
+    "Firefox ESR"
+  ],
+  "babel": {
+    "presets": [
+      "env"
+    ],
+    "plugins": [
+      "transform-dynamic-import"
+    ]
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "parcel-bundler": "^1.12.3",
+    "orbit-controls-es6": "^2.0.0",
     "simplex-noise": "^2.4.0",
-    "three": "^0.102.1"
+    "sma": "^0.1.1",
+    "three": "^0.102.1",
+    "three.js": "^0.77.1",
+    "utils": "^0.3.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.3.4",
+    "babel-plugin-transform-dynamic-import": "^2.1.0",
+    "babel-preset-env": "^1.7.0",
+    "parcel-bundler": "^1.12.3"
   }
 }
